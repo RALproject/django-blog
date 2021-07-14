@@ -3,6 +3,7 @@
 <div></div>
     <h1>As of yet unnamed blog</h1>
 </div>
+
 {%for post in posts%}
 <div>
     <a style="text-decoration: none; color: black;" href="post/{{post.id}}">
@@ -20,4 +21,8 @@ Page {{posts.number}} of {{posts.paginator.num_pages}}
 
 {%if posts.has_next%}
     <a href="?page={{posts.next_page_number}}">next</a>
+{%endif%}
+
+{%if user.is_authenticated%}
+</br><a href="logout">Logout</a>
 {%endif%}
